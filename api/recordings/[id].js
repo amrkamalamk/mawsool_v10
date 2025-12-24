@@ -4,6 +4,7 @@
  * Proxies call recordings from Genesys Cloud to the frontend.
  */
 export default async function handler(req, res) {
+console.log('Token value:', token ? 'Found' : 'Missing');
   const { id } = req.query; // Conversation ID
   const token = process.env.GENESYS_ACCESS_TOKEN;
   const region = 'mec1.pure.cloud'; // UAE Region for horizonscope-cx2
