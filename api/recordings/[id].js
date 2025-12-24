@@ -9,6 +9,10 @@ console.log('Token value:', token ? 'Found' : 'Missing');
   const token = process.env.GENESYS_ACCESS_TOKEN;
   const region = 'mec1.pure.cloud'; // UAE Region for horizonscope-cx2
 
+  export default async function handler(req, res) {
+  const token = process.env.GENESYS_ACCESS_TOKEN; // declare first
+  const { id } = req.query;
+
   if (!token) {
     console.error('Missing GENESYS_ACCESS_TOKEN environment variable');
     return res.status(500).json({ error: 'Server configuration error: Token missing' });
